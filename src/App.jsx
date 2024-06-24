@@ -23,8 +23,10 @@ function App() {
                   <Route path="login" element={<LoginPage/>}/>
                   <Route path="posts">
                       <Route index element={<IndexPage/>}/>
-                      <Route path=":slug" element={<PrivateArea/>}>
-                          <Route index element={<ShowPost/>}/>
+                      <Route path=":slug">
+                          <Route index element={<PrivateArea>
+                            <ShowPost/>
+                            </PrivateArea>}/>
                       </Route>
                       <Route path="create" element={<CreatePost/>}/>
                   </Route>
