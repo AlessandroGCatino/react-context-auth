@@ -41,6 +41,14 @@ button{
   font-weight: bold;
 }
 
+.homepage{
+  text-align: center;
+  h1,
+  p{
+    margin-bottom: 10px;
+  }
+}
+
 .show{
   display: flex;
   flex-wrap: wrap;
@@ -162,4 +170,24 @@ a{
     margin-bottom: 10px;
   }
   
+}
+
+.loginForm{
+  border: 1px dashed #ccc;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;  
+  button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

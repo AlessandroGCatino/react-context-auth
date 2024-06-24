@@ -1,4 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
+import { useAuth } from "../contexts/AuthContext"
+import { useGlobal } from "../contexts/GlobalContext"
+import { useEffect } from "react"
 
 const urlPages = [
     {
@@ -12,6 +15,14 @@ const urlPages = [
 ]
 
 export default function(){
+
+    const { isLoggedIn, logout } = useAuth()
+    let { userName } = useGlobal()
+
+    useEffect(() => {
+    
+    }, [userName])
+
     return (
         <header>
             <nav className="navbar">
@@ -21,6 +32,15 @@ export default function(){
                             <NavLink to={href} end>{label}</NavLink>
                         </li>
                     ))}
+                    {!isLoggedIn ?
+                        <li>
+                            <NavLink to="/login">Login</NavLink>
+                        </li>
+                    :
+                        <li>
+                            <span onClick={logout}>Logout</span>
+                        </li>
+                    }
                 </menu>
             </nav>
         </header>
